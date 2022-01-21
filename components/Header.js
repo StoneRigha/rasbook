@@ -35,6 +35,7 @@ function Header (){
                 </div>
 
             </div>
+
             {/* header center (navigation icons) */}
 
             <div className="flex justify-center flex-grow">
@@ -46,7 +47,14 @@ function Header (){
                     <HeaderIcon Icon={TemplateIcon} />
                 </div>
             </div>
+
             {/* header right (profile settings and log out icon)*/}
+
+            <div>
+                {/* Profile Picture */}
+                <p className="whitespace-nowrap font-semibold pr-3">Ras Stone</p>
+            </div>
+
         </div>
     )
 }
