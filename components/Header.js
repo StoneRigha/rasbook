@@ -8,15 +8,16 @@ import {
     ViewGridIcon,
 } from "@heroicons/react/solid";
 import {
-    FlagIcon,
-    PlayIcon,
+    OfficeBuildingIcon,
+    DesktopComputerIcon,
     SearchIcon,
-    ShoppingCartIcon,
+    TemplateIcon,
 } from "@heroicons/react/outline";
+import HeaderIcon from "./HeaderIcon";
 
 function Header (){
     return (
-        <div>
+        <div className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
 
             {/* header left (logo and search bear)*/}
 
@@ -28,15 +29,21 @@ function Header (){
 
                 <div className="flex ml-2 items-center rounded-full bg-gray-100 p-2">
                     <SearchIcon className="h-6 text-gray-600" />
-                    <input className="flex ml-2 bg-transparent outline-none placeholder-gray-500" type="text" placeholder="Search Facebook" />
+                    <input className="flex ml-2 bg-transparent outline-none placeholder-gray-500 flex-shrink" 
+                    type="text" 
+                    placeholder="Search Facebook" />
                 </div>
 
             </div>
             {/* header center (navigation icons) */}
 
             <div className="flex justify-center flex-grow">
-                <div>
-                    <HeaderIcon Icon={HomeIcon} />
+                <div className="flex space-x-6 md:space-x-2">
+                    <HeaderIcon active Icon={HomeIcon} />
+                    <HeaderIcon Icon={DesktopComputerIcon} />
+                    <HeaderIcon Icon={OfficeBuildingIcon} />
+                    <HeaderIcon Icon={UserGroupIcon} />
+                    <HeaderIcon Icon={TemplateIcon} />
                 </div>
             </div>
             {/* header right (profile settings and log out icon)*/}
