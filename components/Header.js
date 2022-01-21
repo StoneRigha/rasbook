@@ -34,6 +34,11 @@ function Header (){
             </div>
             {/* header center (navigation icons) */}
 
+            <div className="flex justify-center flex-grow">
+                <div>
+                    <HeaderIcon Icon={HomeIcon} />
+                </div>
+            </div>
             {/* header right (profile settings and log out icon)*/}
         </div>
     )
