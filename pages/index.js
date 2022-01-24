@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { getSession } from 'next-auth/react'
 import Login from '../components/Login'
+import { signIn, signOut, useSession } from "next-auth/react";
+
 
 
 export default function Home({ session }) {
