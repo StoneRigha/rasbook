@@ -5,6 +5,7 @@ module.exports = {
       "links.papareact.com",
       "platform-lookaside.fbsbx.com",
       "firebasestorage.googleapis.com",
+      "avatars.githubusercontent.com"
     ],
   },
 };

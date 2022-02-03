@@ -23,7 +23,7 @@ function Sidebar(){
             <SidebarRow Icon={DesktopComputerIcon} title="Watch" />
             <SidebarRow Icon={CalendarIcon} title="Events" />
             <SidebarRow Icon={ClockIcon} title="Memories" />
-            <SidebarRow Icon={ChevronDownIcon} title="Friends" />
+            <SidebarRow Icon={ChevronDownIcon} title="See more" />
         </div>
     )
 }
