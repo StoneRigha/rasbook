@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Header from '../components/Header'
 import { getSession } from 'next-auth/react'
 import Login from '../components/Login'
+import Sidebar from '../components/Sidebar'
 
 
 
@@ -10,7 +11,7 @@ export default function Home({ session }) {
   if (!session) return <Login />
 
   return (
-    <div >
+    <div className='h-screen bg-gray-100 overflow-hidden'>
       <Head>
         <title>Facebook</title>
         
@@ -19,8 +20,9 @@ export default function Home({ session }) {
     {/* Header here */}
     <Header />
 
-    <main>
+    <main className="flex">
       {/* sidebar */}
+      <Sidebar />
 
       {/* feeds */}
 
