@@ -3,7 +3,7 @@ import Image from "next/image";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
 import { CameraIcon, VideoCameraIcon} from "@heroicons/react/solid";
 import { useRef, useState } from "react";
-import { db } from "../firebase";
+import { db, storage } from "../firebase";
 import firebase from "firebase";
 
 function InputBox (){
@@ -29,7 +29,23 @@ function InputBox (){
             image: session.user.image,
             timestamp: firebase.firestore.Fieldvalue.serverTimestamp(),
 
-        })
+        }).then(doc=> {
+            if (imageToPost){
+                const uploadTask = storage.ref(`posts/${doc.id}`).putString(imageToPost, 'data_url')
+
+                removeImage();
+
+                uploadTask.on('state_change', null, error=> console.error(error), () =>{
+                    //when the upload completes
+                    storage.ref('posts').child(doc.id).getDownloadURL().then(url => {
+                        db.collection('posts').doc(doc.id).set({
+                                         
+                        })
+                    })
+                }
+                );
+            }
+        });
 
         inputRef.current.value="";
     };
