@@ -14,7 +14,7 @@ export default function Home({ session }) {
   return (
     <div className='h-screen bg-gray-100 overflow-hidden'>
       <Head>
-        <title>Facebook</title>
+        <title>Rasbook</title>
         
       </Head>
 
