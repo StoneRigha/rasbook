@@ -1,3 +1,5 @@
+/**eslint-disable @next/next/no-img-element */
+
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { EmojiHappyIcon } from "@heroicons/react/outline";
@@ -49,7 +51,9 @@ function InputBox() {
                 .child(doc.id)
                 .getDownloadURL()
                 .then((url) => {
-                  db.collection("posts").doc(doc.id).set({});
+                  db.collection("posts").doc(doc.id).set({
+                    postImage: url
+                  }, {merge: true})
                 });
             }
           );
@@ -71,10 +75,13 @@ function InputBox() {
   };
 
   //remove image
-  const removeImage = () => {
+  const removeImage =() =>{
     setImageToPost(null);
-  };
-
+}
+  // constremoveImage =(()=>{
+  //   setImageToPost(null)
+  // });
+  
   return (
     <div className="bg-white p-2 rounded-2xl shadow-md text-gray-500 font-medium mt-6">
       <div className="flex space-x-4 p-4 items-center ">
@@ -103,7 +110,7 @@ function InputBox() {
             className="flex flex-col filter hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer"
           >
             {/* to check */}
-            <Image className="h-10 image-contain" src={imageToPost} alt="" />
+            <img className="h-10 image-contain" src={imageToPost} alt="image" />
             <p className="text-xs text-red-500 text-center">Remove</p>
           </div>
         )}
