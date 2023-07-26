@@ -110,7 +110,7 @@ function InputBox() {
             className="flex flex-col filter hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer"
           >
             {/* to check */}
-            <img className="h-10 image-contain" src={imageToPost} alt="image" />
+            <Image className="h-10 image-contain" src={imageToPost} alt="image" />
             <p className="text-xs text-red-500 text-center">Remove</p>
           </div>
         )}
