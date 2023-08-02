@@ -44,7 +44,7 @@ export async function getServerSideProps (context){
 
   //server side render on post
   const posts = await db.collection("posts").orderBy("timestamp", 'desc').get();
-  const docs = posts.docChanges.map(posts => ({
+  const docs = posts.docs.map(posts => ({
     id: posts.id,
     ...posts.data(),
     timestamp: null,

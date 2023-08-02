@@ -6,7 +6,8 @@ import { EmojiHappyIcon } from "@heroicons/react/outline";
 import { CameraIcon, VideoCameraIcon } from "@heroicons/react/solid";
 import { useRef, useState } from "react";
 import { db, storage } from "../firebase";
-import firebase from "firebase";
+import * as firebase from "firebase";
+
 
 function InputBox() {
   const { data: session } = useSession();
